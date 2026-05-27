@@ -162,8 +162,8 @@ function LoginContent() {
                 >
                     {/* Header Logo */}
                     <div className="flex flex-col items-center mb-8">
-                        <Link href="/" className="flex items-center gap-2 mb-3">
-                            <div className="p-2 rounded-xl text-primary flex items-center justify-center">
+                        <Link href="/" className="flex items-center gap-1 mb-3">
+                            <div className="rounded-xl text-primary flex items-center justify-center">
                                 <Image
                                     src="/new_icon.PNG"
                                     alt="MedicoCare Logo"
@@ -172,7 +172,7 @@ function LoginContent() {
                                     className="h-12 w-12 object-contain"
                                 />
                             </div>
-                            <span className="font-black text-2xl tracking-tight text-foreground">
+                            <span className="mb-1 font-black text-2xl tracking-tight text-foreground">
                                 MedicoCare
                             </span>
                         </Link>
