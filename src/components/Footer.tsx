@@ -9,8 +9,8 @@ export function Footer() {
                 <div className="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-4 gap-8 md:gap-12 mb-12">
                     {/* Brand */}
                     <div className="col-span-2 md:col-span-1 space-y-6">
-                        <Link href="/" className="flex items-center gap-2">
-                            <div className="p-2 rounded-xl text-primary flex items-center justify-center">
+                        <Link href="/" className="flex items-center gap-1">
+                            <div className="rounded-xl text-primary flex items-center justify-center">
                                 <Image
                                     src="/new_icon.PNG"
                                     alt="MedicoCare Logo"
@@ -19,7 +19,7 @@ export function Footer() {
                                     className="h-12 w-12 object-contain"
                                 />
                             </div>
-                            <span className="font-bold text-xl tracking-tight text-foreground">
+                            <span className="mb-1 font-bold text-xl tracking-tight text-foreground">
                                 MedicoCare
                             </span>
                         </Link>
@@ -46,10 +46,16 @@ export function Footer() {
                     <div>
                         <h3 className="font-semibold text-foreground mb-6">Quick Links</h3>
                         <ul className="space-y-4">
-                            {["Home", "About Us", "Our Products", "Why Choose Us", "Testimonials"].map((link) => (
-                                <li key={link}>
-                                    <Link href="#" className="text-slate-600 dark:text-slate-400 hover:text-primary dark:hover:text-primary text-sm transition-colors">
-                                        {link}
+                            {[
+                                { name: "Home", href: "/" },
+                                { name: "About Us", href: "/#about" },
+                                { name: "Our Products", href: "/products" },
+                                { name: "Why Choose Us", href: "/#why-us" },
+                                { name: "Testimonials", href: "/#testimonials" }
+                            ].map((link) => (
+                                <li key={link.name}>
+                                    <Link href={link.href} className="text-slate-600 dark:text-slate-400 hover:text-primary dark:hover:text-primary text-sm transition-colors">
+                                        {link.name}
                                     </Link>
                                 </li>
                             ))}
@@ -76,7 +82,9 @@ export function Footer() {
                         <ul className="space-y-4">
                             <li className="flex items-center gap-3 text-slate-600 dark:text-slate-400 text-sm">
                                 <Mail className="h-5 w-5 text-primary shrink-0" />
-                                <span>medicocare.support@gmail.com</span>
+                                <a href="mailto:medicocare.support@gmail.com" className="hover:text-primary transition-colors">
+                                    medicocare.support@gmail.com
+                                </a>
                             </li>
                         </ul>
                     </div>
