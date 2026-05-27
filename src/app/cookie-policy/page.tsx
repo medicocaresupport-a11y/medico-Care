@@ -104,9 +104,9 @@ export default function CookiePolicy() {
                         </div>
                         <a
                             href="mailto:medicocare.support@gmail.com"
-                            className="inline-flex items-center gap-2 bg-primary hover:bg-primary/95 text-primary-foreground text-sm font-bold px-5 py-3 rounded-xl transition-all shadow-md shadow-primary/20 shrink-0"
+                            className="inline-flex items-center justify-center gap-2 bg-primary hover:bg-primary/95 text-primary-foreground text-xs sm:text-sm font-bold px-4 py-3 sm:px-5 rounded-xl transition-all shadow-md shadow-primary/20 w-full md:w-auto shrink-0 break-all"
                         >
-                            <Mail className="w-4 h-4" /> medicocare.support@gmail.com
+                            medicocare.support@gmail.com
                         </a>
                     </div>
                 </div>
