@@ -86,22 +86,23 @@ export function Navbar() {
                             </Link>
 
                             <ThemeToggle />
-                            <Link
-                                href="#contact"
-                                className="bg-slate-100 hover:bg-slate-200 dark:bg-slate-850 dark:hover:bg-slate-800 text-slate-700 dark:text-slate-300 px-5 py-2.5 rounded-full text-sm font-medium transition-colors shadow-sm"
-                            >
-                                Contact Us
-                            </Link>
 
                             {isAuthenticated ? (
-                                <div className="flex items-center gap-2 bg-slate-100/50 dark:bg-slate-900 border border-slate-200 dark:border-slate-800 pl-3.5 pr-2 py-1.5 rounded-full">
-                                    <span className="text-xs font-bold text-slate-700 dark:text-slate-300 flex items-center gap-1.5">
-                                        <User className="w-3.5 h-3.5 text-primary" />
-                                        {user?.name.split(" ")[0]}
-                                    </span>
+                                <div className="flex items-center gap-3">
+                                    <div className="flex items-center gap-3 bg-slate-100/50 dark:bg-slate-900 border border-slate-200 dark:border-slate-800 pl-4 pr-5 py-2.5 rounded-2xl">
+                                        <User className="w-6 h-6 text-primary shrink-0" />
+                                        <div className="flex flex-col items-start min-w-0">
+                                            <span className="text-sm font-bold text-slate-800 dark:text-slate-200 truncate leading-tight">
+                                                {user?.name}
+                                            </span>
+                                            <span className="text-xs text-slate-500 dark:text-slate-400 truncate leading-tight mt-0.5">
+                                                {user?.email}
+                                            </span>
+                                        </div>
+                                    </div>
                                     <button
                                         onClick={logout}
-                                        className="text-xs font-bold text-rose-500 hover:bg-rose-500/10 p-1.5 rounded-full transition-all"
+                                        className="text-xs font-bold text-rose-500 hover:bg-rose-500/10 p-2.5 rounded-full transition-all border border-rose-500/10 shrink-0"
                                         title="Log Out"
                                     >
                                         <LogOut className="w-4 h-4" />
@@ -170,21 +171,18 @@ export function Navbar() {
                             </Link>
                         ))}
                         <div className="pt-4 space-y-2">
-                            <Link
-                                href="#contact"
-                                className="block w-full text-center bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-350 px-5 py-3 rounded-lg text-base font-medium transition-colors"
-                                onClick={() => setIsMobileMenuOpen(false)}
-                            >
-                                Contact Us
-                            </Link>
-
                             {isAuthenticated ? (
                                 <div className="pt-2">
-                                    <div className="flex items-center justify-between px-3 py-2.5 bg-slate-50 dark:bg-slate-900 rounded-xl mb-3">
-                                        <span className="text-sm font-bold text-slate-700 dark:text-slate-300 flex items-center gap-2">
-                                            <User className="w-4 h-4 text-primary" />
-                                            {user?.name}
-                                        </span>
+                                    <div className="flex items-center gap-3 px-4 py-3 bg-slate-50 dark:bg-slate-900 rounded-xl mb-3">
+                                        <User className="w-6 h-6 text-primary shrink-0" />
+                                        <div className="flex flex-col items-start min-w-0">
+                                            <span className="text-sm font-bold text-slate-800 dark:text-slate-200 truncate leading-tight">
+                                                {user?.name}
+                                            </span>
+                                            <span className="text-xs text-slate-500 dark:text-slate-400 truncate leading-tight mt-0.5">
+                                                {user?.email}
+                                            </span>
+                                        </div>
                                     </div>
                                     <button
                                         onClick={() => {
